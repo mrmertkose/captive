@@ -1,0 +1,24 @@
+app:
+  name: "Captive App"
+  env: "Development" #Development - Production
+  ssl: "false" #true - false
+  assetsCacheVersion: "1"
+  ipRateLimiter: "true" #true - false
+
+server:
+  host: "localhost"
+  port: "8282"
+  sessionExpire: "1" #hour
+
+postgreSql:
+  username: "root"
+  password: "123456"
+  host: "localhost"
+  port: "3306"
+  dbName : "captive"
+
+redis:
+  dbName: "0"
+  host: "localhost"
+  port: "6379"
+  password: "123456"
