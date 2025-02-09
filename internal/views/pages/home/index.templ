@@ -1,5 +1,10 @@
 package home
 
+import "captive/internal/views/layouts"
+
 templ Index() {
-        <p>Hello it's me.</p>
+	@layouts.Base("Home") {
+		<p class="text-3xl font-bold text-red-600">Hello it's me.</p>
+		<button class="btn btn-sm btn-neutral">Default</button>
+	}
 }

@@ -5,9 +5,9 @@ tmp_dir = "tmp"
 [build]
   args_bin = []
   bin = "tmp\\main.exe"
-  cmd = "templ generate && go build -o ./tmp/main.exe ."
+  cmd = "go build -o ./tmp/main.exe ."
   delay = 1000
-  exclude_dir = ["assets", "tmp", "vendor", "testdata"]
+  exclude_dir = ["tmp", "vendor", "testdata","node_modules"]
   exclude_file = []
   exclude_regex = ["_test.go",".*_templ.go"]
   exclude_unchanged = false
@@ -44,7 +44,7 @@ tmp_dir = "tmp"
 
 [proxy]
   app_port = 8282
-  enabled = true
+  enabled = false
   proxy_port = 8383
 
 [screen]

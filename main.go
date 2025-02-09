@@ -6,21 +6,25 @@ import (
 	"captive/pkg/config"
 	"embed"
 	"fmt"
+	"net/http"
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/log"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/filesystem"
 	"github.com/gofiber/fiber/v2/middleware/helmet"
 	"github.com/gofiber/fiber/v2/middleware/recover"
-	"net/http"
 )
 
-//go:embed all:internal/assets
+//go:embed all:assets
 var embedDirStatic embed.FS
 
 func main() {
 	app := fiber.New()
+
+	// Init Config
 	config.Set()
+
 	app.Use(recover.New(), helmet.New(), cors.New())
 
 	// db settings
@@ -51,7 +55,10 @@ func main() {
 		MaxAge:     2592000,
 	}))
 
+	// DI
 	newContainer := container.NewContainer()
+
+	// Routing
 	router.Setup(app, newContainer)
 
 	// ---> not found
