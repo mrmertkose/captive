@@ -18,7 +18,7 @@ type Services struct {
 
 type Controllers struct {
 	HomeCntrl *controller.HomeController
-	//AuthCntrl    *controller.AuthController
+	AuthCntrl *controller.AuthController
 	//UserCntrl    *controller.UserController
 	//SystemCntrl  *controller.SystemController
 	//FileCntrl    *controller.FileController
@@ -49,7 +49,7 @@ func NewContainer() *Container {
 
 	controllers := Controllers{
 		HomeCntrl: controller.NewHomeController(),
-		//AuthCntrl:    controller.NewAuthController(authDeps),
+		AuthCntrl: controller.NewAuthController(),
 		//UserCntrl:    controller.NewUserController(repos.UserRepo),
 		//SystemCntrl:  controller.NewSystemController(repos.SystemRepo),
 		//FileCntrl:    controller.NewFileController(repos.FileRepo),

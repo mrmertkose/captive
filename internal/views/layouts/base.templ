@@ -1,20 +1,18 @@
 package layouts
 
 templ Base(pageTitle string) {
-<!DOCTYPE html>
-<html lang="tr" data-theme="light">
-
-<head>
-	<meta charset="UTF-8" />
-	<link rel="icon" href="/assets/images/main/favicon.ico" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>{ pageTitle }</title>
-	<link href="/assets/css/styles.min.css" rel="stylesheet" />
-</head>
-
-<body>
-	{ children... }
-</body>
-
-</html>
+	<!DOCTYPE html>
+	<html lang="tr" data-theme="light">
+		<head>
+			<meta charset="UTF-8"/>
+			<link rel="icon" href="/assets/images/main/favicon.ico"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<title>{ pageTitle }</title>
+			<link href="/assets/css/styles.min.css" rel="stylesheet"/>
+			<script src="/assets/js/htmx.min.js"></script>
+		</head>
+		<body hx-boost="true">
+			{ children... }
+		</body>
+	</html>
 }
